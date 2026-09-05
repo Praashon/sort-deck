@@ -1,0 +1,21 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+src-tauri/target/
+
+# Logs and coverage
+*.log
+coverage/
+
+# Environment and secrets
+.env
+.env.*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Local SQLite database artifacts
+*.db
+*.db-wal
+*.db-shm
