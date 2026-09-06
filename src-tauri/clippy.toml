@@ -1,0 +1,13 @@
+allow-unwrap-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+
+disallowed-methods = [
+  { path = "std::fs::rename", reason = "Replaces existing destinations on Windows; use FsBackend primitives instead." },
+  { path = "std::fs::copy", reason = "Use FsBackend streaming copy primitives instead." },
+  { path = "std::fs::remove_file", reason = "Use FsBackend delete primitives with ownership/journal checks." },
+  { path = "std::fs::remove_dir", reason = "Use FsBackend empty-dir cleanup primitives." },
+  { path = "std::fs::remove_dir_all", reason = "Recursive deletion is forbidden outside sandbox test helpers." },
+  { path = "std::fs::write", reason = "Use FsBackend primitives for user paths." },
+  { path = "std::fs::canonicalize", reason = "Yields \\\\?\\ verbatim paths; confine to fsops/platform." },
+]
