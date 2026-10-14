@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability (Private)
+    url: https://github.com/sortdeck/sortdeck/security/advisories/new
+    about: Please report security or data-safety vulnerabilities privately.
