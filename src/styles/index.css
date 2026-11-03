@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --token-canvas: #0c0c0d;
+  --token-surface: #111113;
+  --token-surface-elevated: #17171a;
+  --token-surface-inset: #141417;
+  --token-surface-hover: #1e1e23;
+  --token-border-subtle: #242429;
+  --token-border-strong: #34343c;
+  --token-ink: #f4f4f5;
+  --token-ink-secondary: #b4b4bc;
+  --token-ink-muted: #8b8b96;
+  --token-primary: #f4f4f5;
+  --token-primary-ink: #0c0c0d;
+  --token-primary-hover: #e4e4e7;
+  --token-accent: #2cb5a0;
+  --token-accent-ink: #07221e;
+  --token-accent-subtle: #102421;
+  --token-accent-border: #1d4a43;
+  --token-success-ink: #34d399;
+  --token-success-bg: #0d261d;
+  --token-success-border: #174534;
+  --token-warning-ink: #fbbf24;
+  --token-warning-bg: #291f0a;
+  --token-warning-border: #4d380f;
+  --token-danger-ink: #f87171;
+  --token-danger-bg: #2b1113;
+  --token-danger-border: #541e22;
+  --token-neutral-ink: #a1a1aa;
+  --token-neutral-bg: #1f1f24;
+  --token-neutral-border: #32323a;
+  --token-attention-ink: #fb923c;
+  --token-attention-bg: #2b180b;
+  --token-attention-border: #572f13;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --token-canvas: #f4f4f1;
+  --token-surface: #fafaf8;
+  --token-surface-elevated: #ffffff;
+  --token-surface-inset: #f1f1ed;
+  --token-surface-hover: #ecece6;
+  --token-border-subtle: #e3e3dc;
+  --token-border-strong: #cecec6;
+  --token-ink: #141416;
+  --token-ink-secondary: #43434b;
+  --token-ink-muted: #62626d;
+  --token-primary: #141416;
+  --token-primary-ink: #fafaf8;
+  --token-primary-hover: #27272c;
+  --token-accent: #0f766e;
+  --token-accent-ink: #ffffff;
+  --token-accent-subtle: #eaf5f3;
+  --token-accent-border: #b6ded8;
+  --token-success-ink: #15803d;
+  --token-success-bg: #edf7f0;
+  --token-success-border: #bce8ca;
+  --token-warning-ink: #9a5b04;
+  --token-warning-bg: #fef8ec;
+  --token-warning-border: #f0d49c;
+  --token-danger-ink: #b91c1c;
+  --token-danger-bg: #fdf0f0;
+  --token-danger-border: #f2bebe;
+  --token-neutral-ink: #52525b;
+  --token-neutral-bg: #f3f3f4;
+  --token-neutral-border: #d4d4d8;
+  --token-attention-ink: #b4450b;
+  --token-attention-bg: #fff4ed;
+  --token-attention-border: #f5c6a8;
+}
+
+@theme {
+  --color-canvas: var(--token-canvas);
+  --color-surface: var(--token-surface);
+  --color-surface-elevated: var(--token-surface-elevated);
+  --color-surface-inset: var(--token-surface-inset);
+  --color-surface-hover: var(--token-surface-hover);
+  --color-border-subtle: var(--token-border-subtle);
+  --color-border-strong: var(--token-border-strong);
+  --color-ink: var(--token-ink);
+  --color-ink-secondary: var(--token-ink-secondary);
+  --color-ink-muted: var(--token-ink-muted);
+  --color-primary: var(--token-primary);
+  --color-primary-ink: var(--token-primary-ink);
+  --color-primary-hover: var(--token-primary-hover);
+  --color-accent: var(--token-accent);
+  --color-accent-ink: var(--token-accent-ink);
+  --color-accent-subtle: var(--token-accent-subtle);
+  --color-accent-border: var(--token-accent-border);
+  --color-success-ink: var(--token-success-ink);
+  --color-success-bg: var(--token-success-bg);
+  --color-success-border: var(--token-success-border);
+  --color-warning-ink: var(--token-warning-ink);
+  --color-warning-bg: var(--token-warning-bg);
+  --color-warning-border: var(--token-warning-border);
+  --color-danger-ink: var(--token-danger-ink);
+  --color-danger-bg: var(--token-danger-bg);
+  --color-danger-border: var(--token-danger-border);
+  --color-neutral-ink: var(--token-neutral-ink);
+  --color-neutral-bg: var(--token-neutral-bg);
+  --color-neutral-border: var(--token-neutral-border);
+  --color-attention-ink: var(--token-attention-ink);
+  --color-attention-bg: var(--token-attention-bg);
+  --color-attention-border: var(--token-attention-border);
+  --font-sans: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Mono', 'Cascadia Code', Consolas, ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--token-surface);
+  color: var(--token-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv02', 'cv03', 'cv04';
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--token-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (forced-colors: active) {
+  * {
+    forced-color-adjust: auto;
+  }
+}
